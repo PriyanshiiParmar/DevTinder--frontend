@@ -10,19 +10,19 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
-    const handleLogin = async() =>{
-        try{
-            const res = await axios.post(BASE_URL+'/login', {email, password}, {withCredentials: true});
-            console.log(res);
-            dispatch(addUser(res?.data));
-            return navigate('/');
-        }
-        catch(err)
-        {
-            console.log(err);
-        }
-    }
+    const handleLogin = async () => {
+      try {
+          const res = await axios.post(BASE_URL + '/login', { email, password }, { withCredentials: true });
+          console.log(res);
+          dispatch(addUser(res?.data));
+          navigate('/');
+      } catch (err) {
+          console.error("the error is "+err);
+          setErrorMessage(err.response?.data || "Login failed. Please try again.");
+      }
+  };
 
   return (
     <div>
@@ -49,7 +49,8 @@ const Login = () => {
               onChange = {(e) => setPassword(e.target.value)}
             />
           </label>
-          <div className="justify-end m-3 card-actions">
+          <div className=" flex m-3 card-actions">
+            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             <button className="btn btn-primary m-auto p-5" onClick={handleLogin}>Login</button>
           </div>
         </div>

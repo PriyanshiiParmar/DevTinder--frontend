@@ -27,17 +27,17 @@ const Connections = () => {
   if (!connections) return;
 
   if (connections.length === 0) {
-    return <div>No connections found</div>;
+    return <div className="text-center font-bold text-3xl m-3">No connections found</div>;
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-20">
       <h1 className="text-center font-bold text-3xl m-5">Connections</h1>
-      <div className="flex justify-center">
+      <div className="">
         {connections
           .filter((connection) => connection)
           .map((connection) => (
-            <div key={connection._id} className="card w-[30%] m-3 card-sm card-side p-3 flex items-center bg-base-300 shadow-sm ">
+            <div key={connection._id} className="m-auto card w-[30%] my-3 card-sm card-side p-3 flex items-center bg-base-300 shadow-sm ">
               <div>
                 <img className="w-40 rounded-full border border-accent p-1" src={connection?.photoURL} />
               </div>

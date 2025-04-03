@@ -2,9 +2,13 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/constants";
 import { removeUserFromFeed } from "../utils/feedSlice";
+import {useState} from 'react';
 
 const UserFeedCard = (userData) => {
   const dispatch = useDispatch();
+  const [showToast, setShowToast] = useState(false);
+  const [popUpMessage, setPopUpMessage] = useState("");
+
   console.log(userData);
 
   const {
@@ -26,6 +30,13 @@ const UserFeedCard = (userData) => {
         { withCredentials: true }
       );
       dispatch(removeUserFromFeed(id));
+      setShowToast(true);
+      if(status === 'ignored')
+        setPopUpMessage("Ignored the profile successfully");
+      else setPopUpMessage("Sent connection request successfully");
+      setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
     } catch (err) {
       console.log(err);
     }
@@ -60,6 +71,11 @@ const UserFeedCard = (userData) => {
           </button>
         </div>
       </div>
+     {showToast &&  <div className="toast toast-top toast-center">
+  <div className="alert alert-success">
+    <span>{popUpMessage}</span>
+  </div>
+</div>}
     </div>
   );
 };

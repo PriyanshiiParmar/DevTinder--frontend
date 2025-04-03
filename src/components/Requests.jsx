@@ -66,10 +66,10 @@ const Requests = () => {
               _id,
             } = request.sender;
             return (
-              <div className="card mx-auto w-[30%] my-3 card-sm card-side p-3 flex items-center bg-base-300 shadow-sm  ">
+              <div className="card mx-auto w-[30%] my-3 card-sm card-side p-3 flex items-center  bg-base-300 shadow-sm  ">
                 <div>
                   <img
-                    className="w-28 rounded-full m-2 border border-accent"
+                    className="w-28 rounded-full m-5 border border-accent"
                     src={photoURL}
                   />
                 </div>
@@ -82,7 +82,7 @@ const Requests = () => {
                   </p>
                   <p>{description}</p>
                   <button
-                    className="btn m-2 btn-soft btn-primary"
+                    className="btn  btn-soft btn-primary"
                     onClick={() => reviewRequest("rejected", _id)}
                   >
                     Reject

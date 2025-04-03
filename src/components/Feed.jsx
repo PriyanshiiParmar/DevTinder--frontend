@@ -32,6 +32,21 @@ const Feed = () => {
     );
   }
 
-  return <div>{feed && <UserFeedCard user={feed[0]} />}</div>;
+  return (
+    <div>
+      <h1 className="mt-4 text-3xl text-center font-bold">
+        Connect with Devs Who Speak Your Language.
+      </h1>
+      {/* <TinderCard
+            key={user.id}
+            className="swipe"
+            onSwipe={(dir) => swiped(dir, user.id)}
+            onCardLeftScreen={() => outOfFrame(user.id)}
+            preventSwipe={["up", "down"]}
+          > */}
+      {feed && <UserFeedCard user={feed[0]} />}
+      {/* </TinderCard> */}
+    </div>
+  );
 };
 export default Feed;

@@ -37,7 +37,7 @@ const Connections = () => {
         {connections
           .filter((connection) => connection)
           .map((connection) => (
-            <div key={connection._id} className="m-auto card w-[30%] my-3 card-sm card-side p-3 flex items-center bg-base-300 shadow-sm ">
+            <div key={connection._id} className="m-auto card w-[80%] sm:w-[60%] md:w-[45%] lg:w-[35%] my-3 card-sm card-side p-3 flex items-center bg-base-300 shadow-sm ">
               <div>
                 <img className="w-40 rounded-full border border-accent p-1" src={connection?.photoURL} />
               </div>

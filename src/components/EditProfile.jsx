@@ -38,7 +38,7 @@ const EditProfile = ({ user }) => {
       console.log("Profile updated successfully:", res.data);
       dispatch(addUser(res.user));
       setShowToast(true);
-      if(errorMessage) setErrorMessage(" ");
+      if (errorMessage) setErrorMessage(" ");
       setTimeout(() => {
         setShowToast(false);
       }, 3000);
@@ -136,7 +136,7 @@ const EditProfile = ({ user }) => {
           </div>
         </div>
       </div>
-      <UserFeedCard
+      <UserFeedCard 
         user={{ firstName, lastName, age, description, photoURL, gender }}
       />
       {showToast && (

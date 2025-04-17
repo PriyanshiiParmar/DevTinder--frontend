@@ -16,7 +16,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showToast, setShowToast] = useState(false);
   const [popUpMessage, setPopUpMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -59,8 +59,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="card w-96 bg-base-300 py-8 mb-20 m-auto card-xl shadow-sm mt-30">
+    <div className="mb-20">
+      <div className="card w-96 bg-base-300 py-8 mb-10 m-auto card-xl shadow-sm mt-10 sm:mt-10">
         <div className="card-body">
           <h2 className="card-title font-bold m-auto p-3 text-3xl">
             {isLogin ? "Login" : "Signup"}
@@ -108,7 +108,7 @@ const Login = () => {
               className="input input-md"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p onClick={()=>setShowPassword(!showPassword)} className="text-sm cursor-pointer">Show password</p>
+            <p onClick={()=>setShowPassword(!showPassword)} className="text-sm cursor-pointer">{showPassword ? "Hide Password" : "Show Password"}</p>
           </label>
           <div className=" flex m-3 card-actions">
             {errorMessage && <p className="text-red-500">{errorMessage}</p>}

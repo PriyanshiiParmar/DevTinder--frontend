@@ -27,7 +27,13 @@ const Connections = () => {
   if (!connections) return;
 
   if (connections.length === 0) {
-    return <div className="text-center font-bold text-3xl m-3">No connections found</div>;
+    return <div className="text-center font-bold text-3xl m-3">
+       <h1 className="m-4 text-xl sm:text-3xl text-center font-bold italic">
+       {/* No connections yet, huh? Keep pushing that code, and soon someone will be really into your pull requests  */}
+       The connection queue’s empty... but the explore tab is full of potential matches
+      </h1>
+      <img className="m-auto h-50 sm:h-96" src="https://img.freepik.com/premium-vector/concept-illustration-man-woman-friends-having-online-conversation-messaging-chatting-communication-texting-messages-mobile-phone-apps-flat-cartoon-style_270158-412.jpg"/>
+    </div>;
   }
 
   return (

@@ -4,6 +4,7 @@
 - update the settings via ---- chmod 400 "devTinder-secrett.pem"
 - connect to system via ---- ec2-16-171-162-203.eu-north-1.compute.amazonaws.com
 - ssh -i "C:\Users\priya\Downloads\devTinder-secrett.pem" ubuntu@ec2-16-171-162-203.eu-north-1.compute.amazonaws.com
+- ssh -i "C:\Users\priya\Downloads\node-secretKey.pem" ubuntu@ec2-13-60-216-39.eu-north-1.compute.amazonaws.com (this is used for latest)
 - install correct version of node 
 - clone the frontend and backend project onto the machine by - git clone https://github.com/PriyanshiiParmar/DevTinder--frontend.git
 - for backend - git clone https://github.com/PriyanshiiParmar/DevTinder---backend.git

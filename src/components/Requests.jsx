@@ -42,9 +42,13 @@ const Requests = () => {
 
   if (requests && requests.length === 0) {
     return (
-      <h1 className="text-center m-3 font-bold text-3xl">
-        No requests recieved
-      </h1>
+      <div>
+      <h1 className="m-4 text-xl sm:text-3xl text-center font-bold italic">
+      {/* No connections yet, huh? Keep pushing that code, and soon someone will be really into your pull requests  */}
+      No requests yet... but don’t worry, your perfect match might just be a click away 
+     </h1>
+     <img className="m-auto h-50 sm:h-96" src="https://img.freepik.com/free-vector/job-interview-process-hiring-new-employees-hr-specialist-cartoon-character-talking-new-candidatee-recruitment-employment-headhunting-concept-illustration_335657-2034.jpg"/>
+   </div>
     );
   }
 

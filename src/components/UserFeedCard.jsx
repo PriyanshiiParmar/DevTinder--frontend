@@ -45,7 +45,7 @@ const UserFeedCard = (userData) => {
 
 
   return (
-    <div className="card mb-40 sm:mb-20  bg-base-300 my-20 mx-auto w-96 shadow-lg">
+    <div className="card mb-40 sm:mb-20   bg-base-300 my-10 mx-auto w-66 sm:w-82 shadow-lg">
       <figure className="px-10 pt-10">
         <img src={photoURL} alt={firstName + "photo"} className="rounded-xl" />
       </figure>
